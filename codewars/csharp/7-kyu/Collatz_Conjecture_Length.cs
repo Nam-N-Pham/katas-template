@@ -3,10 +3,6 @@ public class Kata
     public static int Collatz(int n)
     {
         int counter = 1;
-        if (n == 1)
-        {
-            return 4;
-        }
         while (n > 1)
         {
             if (n % 2 == 0)
