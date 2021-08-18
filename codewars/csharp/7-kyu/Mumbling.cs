@@ -7,7 +7,7 @@ public class Accumul
         string sLowerCase = s.ToLower();
         string answer = "";
 
-        for (int indexOfs = 0; indexOfs < sLowerCase.Length; indexOfs++)
+        for (int indexOfs = 0; indexOfs < s.Length; indexOfs++)
         {
             for (int numOfLettersToPrint = indexOfs + 1; numOfLettersToPrint > 0; numOfLettersToPrint--)
             {
