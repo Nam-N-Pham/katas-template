@@ -8,5 +8,7 @@ public static class Kata
         return Enumerable.Range(0, 10).Except(superImportantArray).First();
 
         // return Enumerable.Range(0, 10).Sum() - superImportantArray.Sum();
+
+        return Enumerable.Range(0, 10).FirstOrDefault(num => !superImportantArray.Contains(num));
     }
 }
