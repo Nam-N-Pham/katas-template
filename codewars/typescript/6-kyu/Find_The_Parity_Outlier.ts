@@ -5,11 +5,11 @@ export function findOutlier(integers: number[]): number {
 
   for (let i = 0; i < integers.length; i++) {
     if (integers[i] % 2 === 0) numOfEvens++
-    if (integers[i] % 2 === 1) numOfOdds++
+    if (integers[i] % 2 === 1 || integers[i] % 2 === -1) numOfOdds++
   }
   if (numOfOdds === 1) {
     for (let i = 0; i < integers.length; i++) {
-      if (integers[i] % 2 === 1) answer = integers[i]
+      if (integers[i] % 2 === 1 || integers[i] % 2 === -1) answer = integers[i]
     }
   }
   if (numOfEvens === 1) {
