@@ -1,0 +1,1 @@
+function anagrams(word, words) {}
