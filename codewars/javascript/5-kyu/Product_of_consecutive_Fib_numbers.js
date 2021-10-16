@@ -1,0 +1,1 @@
+function productFib(prod) {}
