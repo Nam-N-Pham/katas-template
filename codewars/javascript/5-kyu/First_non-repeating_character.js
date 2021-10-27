@@ -1,5 +1,27 @@
 function firstNonRepeatingLetter(s) {
-  // Add your code here
+  let currentLetter = "";
+
+  for (let i = 0; i < s.length; i++) {
+    currentLetter = s[i];
+    for (let j = 0; j < s.length; j++) {
+      if (j === i) {
+        continue;
+      }
+
+      if (currentLetter.toLowerCase() !== s[j].toLowerCase()) {
+        continue;
+      } else {
+        currentLetter = "";
+        break;
+      }
+    }
+
+    if (currentLetter !== "") {
+      return currentLetter;
+    }
+  }
+
+  return currentLetter;
 }
 
 // https://www.codewars.com/kata/52bc74d4ac05d0945d00054e/train/javascript
