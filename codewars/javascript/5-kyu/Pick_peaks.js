@@ -1,5 +1,40 @@
 function pickPeaks(arr) {
-  //  return {pos:[],peaks:[]}
+  let answer = {
+    pos: [],
+    peaks: [],
+  };
+
+  for (let i = 1; i < arr.length - 1; i++) {
+    let prev = arr[i - 1];
+    let current = arr[i];
+    let next = arr[i + 1];
+
+    if (current > prev && current > next) {
+      answer.pos.push(i);
+      answer.peaks.push(arr[i]);
+    }
+
+    if (current > prev && current === next) {
+      for (let j = i + 1; j < arr.length; j++) {
+        next = arr[j + 1];
+
+        if (current > next) {
+          answer.pos.push(i);
+          answer.peaks.push(arr[i]);
+
+          i = j;
+          break;
+        } else if (current === next) {
+          continue;
+        } else {
+          i = j;
+          break;
+        }
+      }
+    }
+  }
+
+  return answer;
 }
 
 // https://www.codewars.com/kata/5279f6fe5ab7f447890006a7/train/javascript
