@@ -1,5 +1,35 @@
 function score( dice ) {
-  // Fill me in!
+  let numOfRolls = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+  }
+
+  for (let i = 0; i < dice.length; i++) {
+    numOfRolls[dice[i]]++
+  }
+
+  let points = 0
+
+  for (let i = 1; i <= 6; i ++) {
+    if (numOfRolls[i] >= 3) {
+      if (i === 1) {
+        points += 1000
+      } else {
+        points += i * 100
+      }
+
+      numOfRolls[i] -= 3
+    }
+  }
+
+  points += numOfRolls[1] * 100
+  points += numOfRolls[5] * 50
+
+  return points
 }
 
 https://www.codewars.com/kata/5270d0d18625160ada0000e4/train/javascript
