@@ -1,5 +1,22 @@
 function ipsBetween(start, end) {
-  //TODO
+  const first = start.split(".");
+  const second = end.split(".");
+
+  let firstAsBinary = "";
+  for (let i = 0; i < first.length; i++) {
+    firstAsBinary += parseInt(first[i]).toString(2).padStart(8, "0");
+  }
+
+  let secondAsBinary = "";
+  for (let i = 0; i < second.length; i++) {
+    secondAsBinary += parseInt(second[i]).toString(2).padStart(8, "0");
+  }
+
+  let firstAsDecimal = parseInt(firstAsBinary, 2);
+  let secondAsDecimal = parseInt(secondAsBinary, 2);
+
+  let difference = secondAsDecimal - firstAsDecimal;
+  return difference;
 }
 
 // https://www.codewars.com/kata/526989a41034285187000de4/train/javascript
